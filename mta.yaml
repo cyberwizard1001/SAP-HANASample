@@ -28,6 +28,8 @@ modules:
     path: web
     requires:
       - name: openSAPHANA_NK_00-uaa
+        properties:
+          TARGET_CONTAINER: ~(hdi-container-name)
 resources:
   - name: openSAPHANA-db-hdi-container
     type: com.sap.xs.hdi-container
