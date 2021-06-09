@@ -4,8 +4,9 @@
 //
 // This is a workaround that will be replaced by a solution where CDS generates the DB module along with package.json.
 
-const fs = require('fs');
-const childproc = require('child_process');
+
+var fs = require('fs');
+var childproc = require('child_process');
 
 if (fs.existsSync('../package.json')) {
     // true at build-time, false at CF staging time
