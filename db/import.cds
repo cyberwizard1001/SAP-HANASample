@@ -1,4 +1,4 @@
-    type BusinessKey : String(10);
+type BusinessKey : String(10);
 type SDate : DateTime;
 type CurrencyT : String(5)  @title: '{i18n>currency}';
 type AmountT : Decimal(15, 2);

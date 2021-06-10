@@ -3,7 +3,7 @@ _schema-version: '2.1'
 description: Sample project to learn openSAP
 version: 0.0.1
 modules:
-  - name: openSAPHANA-db
+  - name: db
     type: hdb
     path: db
     parameters:
@@ -12,8 +12,8 @@ modules:
     requires:
       - name: openSAPHANA-db-hdi-container
         properties:
-          TARGET_CONTAINER: ~(hdi-container-name)
-  - name: openSAPHANA-srv
+          TARGET_CONTAINER: '~{hdi-container-name}'
+  - name: srv
     type: nodejs
     path: srv
     parameters:
@@ -30,8 +30,6 @@ modules:
     path: web
     requires:
       - name: openSAPHANA_NK_00-uaa
-        properties:
-          TARGET_CONTAINER: ~(hdi-container-name)
 resources:
   - name: openSAPHANA-db-hdi-container
     type: com.sap.xs.hdi-container
