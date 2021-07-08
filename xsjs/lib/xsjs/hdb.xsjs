@@ -13,3 +13,5 @@ var rs = conn.executeQuery(query);
 $.response.setBody(JSON.stringify(rs));
 $.response.contentType = "application/json";
 $.response.status = $.net.http.OK;
+
+//server sends a text query that is executed at the DB level. That returns a JSON which is converted to string using JS functionality and sent to the browser through the response.

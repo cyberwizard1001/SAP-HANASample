@@ -1,0 +1,1 @@
+//special type of security token to make sure all requests are coming from the same browser window
