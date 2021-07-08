@@ -40,6 +40,12 @@ modules:
     path: web
     requires:
       - name: openSAPHANA_NK_00-uaa
+      - name: xsjs_api
+        group: destinations
+        properties:
+          name: xsjs_api
+          url: '~{url}'
+          forwardAuthToken: true
   - name: user_db
     type: hdb
     path: user_db
@@ -47,6 +53,17 @@ modules:
       - name: hdi_user_db
         properties:
           TARGET_CONTAINER: '~{user-container-name}'
+  - name: xsjs
+    type: nodejs
+    path: xsjs
+    provides:
+      - name: xsjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: openSAPHANA-db-hdi-container
+      - name: openSAPHANA_NK_00-uaa
+      - name: db
 resources:
   - name: openSAPHANA-db-hdi-container
     type: com.sap.xs.hdi-container
